@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\geometry{a4paper, margin=1.5cm}
+\usepackage{enumitem}
+\usepackage{amsmath}
+
+% Configuración de hipervínculos en azul
+\hypersetup{
+    colorlinks = true,
+    linkcolor = blue,
+    urlcolor = blue,
+    citecolor = blue
+}
+
+% Configurar márgenes
+\geometry{a4paper, left=1.5cm, right=1.5cm, top=1.5cm, bottom=2cm}
+
+\definecolor{lightblue}{RGB}{230,240,255}
+
+\title{\textbf{Lista de Componentes para Construcción de PC}}
+\title{Computadora Para Minar Criptomonedas}
+\author{Samuel Primera CI: 31.129.684, Samuel Reyna CI: 30.210.759}
+
+\begin{document}
+
+\maketitle
+
+\begin{table}[h]
+\centering
+\caption{Resumen de productos con precios y descuentos}
+\label{tab:productos}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{5cm}ccc>{\raggedright\arraybackslash}p{3.5cm}@{}}
+\toprule
+\rowcolor{lightblue}
+\textbf{Producto} & \textbf{Cant.} & \textbf{Precio (USD)} & \textbf{Desc.} & \textbf{Enlace} \\
+\midrule
+MSI Placa base B450M-A PRO MAX II ProSeries & 1 & 76.48 & -- & \href{https://www.amazon.com/-/es/PRO-MAX-II-compatible-procesadores/dp/B0CLVGM4TB/ref=sr_1_1?sr=8-1}{Amazon} \\
+Sapphire 11330-02-20G Pulse AMD Radeon RX 7800 XT & 3 & 704.00 & -- & \href{https://www.amazon.com/-/es/Sapphire-11330-02-20G-Radeon-Tarjeta-gr\%C3\%A1fica/dp/B0CFWM1LNH}{Amazon} \\
+Corsair Serie RMX (2021), RM1000x & 1 & 149.99 & -- & \href{https://www.amazon.com/-/es/Corsair-RM1000x-alimentaci\%C3\%B3n-totalmente-renovada/dp/B09F1XRN4J/ref=pd_ci_mcx_pspc_dp_2_t_2}{Amazon} \\
+ARCTIC F12 (paquete de 5) & 1 & 22.99 & -- & \href{https://www.amazon.com/dp/B09JG7DVM}{Amazon} \\
+\textbf{ARCTIC F12 con descuento} & 2 & \textbf{7.07} & \textbf{17\%} & \href{https://www.amazon.com/dp/B09JG7DVMT}{Amazon} \\
+Kingston SSD - HDD interno de repuesto & 1 & 14.99 & -- & \href{https://www.amazon.com/-/es/Kingston-SSD-repuesto-aumentar-rendimiento/dp/B07P22T3VD}{Amazon} \\
+\textbf{PCIE Riser} & 2 & \textbf{7.99} & \textbf{38\%} & \href{https://www.amazon.com/-/es/MZHOU-PCIE-Riser-adaptadoras-extensi\%C3\%B3n/dp/B09F2VY1QH/ref=pd_ci_mcx_pspc_dp_2_t_1}{Amazon} \\
+Rig De Mineria 6 Placas & 1 & 15.90 & -- & \href{https://www.mercadolibre.com.ar/rig-de-mineria-6-placas-componentes-cualquier-tamano/up/MLAU2885045905\#polycard_client=search-nordic}{M. Libre} \\
+\textbf{AMD Ryzen 3 4100} & 1 & \textbf{58.70} & \textbf{41\%} & \href{https://www.amazon.com/-/es/AMD-Ryzen-4100-Procesador-desbloqueado/dp/B09VCRQVWM/ref=pd_ci_mcx_di_int_sccai_cn_d_sccl_2_5/146-0730353-2200262?psc=1}{Amazon} \\
+Memoria Ram Ddr4 4gb 2666mhz Mushkin Essentials & 1 & 15.00 & -- & \href{https://articulo.mercadolibre.com.ve/MLV-705928030-memoria-ram-ddr4-4gb-2666mhz-mushkin-essentials-_JM\#polycard_client=search-nordic}{M. Libre} \\
+\addlinespace
+\multicolumn{3}{l}{\textbf{Total General}} & \multicolumn{2}{r}{\textbf{\$2,496.17}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.5cm}
+
+\noindent\textbf{Notas:}
+\begin{itemize}
+\item Precio del Rig de Minería convertido de 18,800 ARS a USD usando \href{https://www.calcular.cl/divisas/ars/usd/18800-peso-argentino-a-dolar}{calcular.cl}
+\item Los enlaces aparecen en color azul como hipervínculos funcionales en el PDF
+\item Precios unitarios ya incluyen descuentos aplicados
+\end{itemize}
+
+\newpage
+
+\section*{Justificaciones}
+
+\begin{description}[font=\bfseries, leftmargin=1.5cm, style=nextline]
+
+\item[Sapphire Radeon RX 7800 XT (x3)] \hphantom{.} 
+\begin{itemize}
+  \item \textbf{Potencia de Cálculo Masiva}: 3 GPUs  optimizadas para algoritmos de minería como Ethash o KawPow.
+  \item \textbf{Eficiencia Energética}: Arquitectura RDNA 3 con bajo consumo por hash.
+  \item \textbf{Paralelización Óptima}: 99\% del trabajo minero se acelera 3$\times$ vs. una sola GPU.
+\end{itemize}
+
+\item[ARCTIC F12 (5-pack + 2 unidades)] \hphantom{.}
+\begin{itemize}
+  \item \textbf{Refrigeración Activa}: 7 ventiladores en total evitan el \textit{estrangulamiento térmico} en GPUs/CPU.
+  \item \textbf{Flujo de Aire Directo}: Reducen temperaturas , manteniendo \textit{hashrate} estable incluso en \textit{overclock}.
+  \item \textbf{Refrigeración Estratégica}: Ubicables cerca de VRMs o \textit{risers} para puntos calientes críticos.
+  \item \textbf{Costo-Efectividad}: Solo 0.35 USD por ventilador (con descuentos).
+\end{itemize}
+
+\item[PCIE Risers (x2 paquetes)] \hphantom{.}
+\begin{itemize}
+  \item \textbf{Escalabilidad GPU}: Habilitan 3 GPUs simultáneas en placa base (vs. 1 sin risers).
+  \item \textbf{Aislamiento Térmico}: Distancian GPUs del \textit{motherboard}, mejorando disipación.
+  \item \textbf{Conectividad Estable}: Cables USB 3.0 minimizan pérdida de rendimiento.
+\end{itemize}
+
+\item[Corsair RM1000x (PSU)]\hphantom{.}
+\begin{itemize}
+  \item \textbf{Alimentación Robusta}: 1000W con certificación 80+ Gold, soporta picos de 3 GPUs.
+  \item \textbf{Cables Modulares}: Reduce desorden en el \textit{rig}, optimizando flujo de aire.
+  \item \textbf{Protección Integrada}: Cortocircuitos, sobrecalentamiento y sobrevoltaje para hardware caro.
+\end{itemize}
+
+\item[AMD Ryzen 3 4100] \hphantom{.}
+\begin{itemize}
+  \item \textbf{Mínimo Cuello de Botella}: 4 núcleos/8 hilos gestionan \textit{drivers} y \textit{pools} sin afectar GPUs.
+  \item \textbf{Bajo Consumo}: 65W TDP, libera capacidad de la PSU para GPUs.
+  \item \textbf{Desbloqueado}: Permite \textit{underclock} para reducir consumo sin impacto en minería.
+\end{itemize}
+
+\item[MSI B450M-A PRO MAX II]\hphantom{.}
+\begin{itemize}
+  \item \textbf{Conectividad Multi-GPU}: 3 \textit{slots} PCIe (con risers), soporta hasta 6 GPUs con expansión.
+  \item \textbf{Durabilidad}: VRMs refrigerados para operación 24/7.
+  \item \textbf{BIOS Minero}: Configuración simplificada para \textit{overclock/undervolt} de GPUs.
+\end{itemize}
+
+\item[Kingston SSD 120GB] \hphantom{.}
+\begin{itemize}
+  \item \textbf{Fiabilidad}: Cero fragmentación, reduce errores en reinicios automáticos tras caídas.
+\end{itemize}
+
+\item[Mushkin RAM 4GB]\hphantom{.}
+\begin{itemize}
+  \item \textbf{Baja Latencia}: 2666 MHz asegura comunicación fluida CPU-GPUs.
+\end{itemize}
+
+\item[Rig de Minería 6 Placas]\hphantom{.}
+\begin{itemize}
+  \item \textbf{Estructura Optimizada}: Diseño abierto para máximo flujo de aire.
+  \item \textbf{Escalabilidad}: Espacio para 6 GPUs y fuentes adicionales.
+  \item \textbf{Portabilidad}: Ensamble modular para traslado o mantenimiento.
+\end{itemize}
+
+\newpage
+
+\section*{Conclusión}
+
+En los últimos años, la minería de criptomonedas ha disminuido significativamente debido a factores como los altos costes de energía y hardware, la reducción de las recompensas de bloques e incluso las políticas gubernamentales. Para que esta actividad sea mínimamente rentable hoy en día, es necesario realizar una inversión de miles, o incluso cientos de miles de dólares.
+
+Aun así, se ha intentado crear una computadora capaz de realizar esta tarea con un presupuesto muy reducido. Priorizando la rentabilidad sobre la potencia bruta, y basándose en algoritmos y criptomonedas que requieren menor potencia de cálculo para su minería, se ha logrado desarrollar un sistema. Este consta de componentes básicos para el sistema operativo y los programas necesarios, junto con una solución de refrigeración adecuada. La mayor parte del presupuesto se destinó específicamente al apartado de cálculos complejos requeridos para la minería.
+
+Aunque no es la opción más rentable, esta computadora minera cumple con los requisitos esenciales para ofrecer el rendimiento más óptimo posible dentro del presupuesto asignado.
+
+\end{document}
