@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+\usepackage{booktabs}
+
+\title{Aplicación de la Ley de Amdahl a Configuraciones Multi-GPU}
+\author{Análisis de Rig Minero}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Ley de Amdahl}
+\subsection*{Fórmula Adaptada a GPUs}
+
+\subsection*{Formulación General}
+La aceleración (\(S\)) en sistemas multi-GPU se calcula como:
+\[
+\boxed{S = \dfrac{1}{(1 - P) + \dfrac{P}{N}}}
+\]
+donde:
+\begin{itemize}
+  \item \(S\): \textbf{Aceleración real} (vs. rendimiento con 1 GPU)
+  \item \(P\): Fracción \textbf{paralelizable} del algoritmo (\(0 \leq P \leq 1\))
+  \item \(N\): Número de \textbf{GPUs} (\(N = 3\) en su configuración)
+\end{itemize}
+
+\subsection*{Interpretación Física}
+\begin{align*}
+\text{Límite teórico:} \quad & \lim_{N \to \infty} S = \frac{1}{1 - P} \\
+\text{Eficiencia:} \quad & E = \frac{S}{N} \times 100\%
+\end{align*}
+
+\subsection*{Aplicación Práctica al Rig}
+
+\subsection*{Escenario Ideal (\(P = 0.99\))}
+\begin{itemize}
+  \item Paralelización declarada: \(P = 0.99\)
+  \item Número de GPUs: \(N = 3\)
+\end{itemize}
+\[
+S = \dfrac{1}{(1 - 0.99) + \dfrac{0.99}{3}} = \dfrac{1}{0.01 + 0.33} = \dfrac{1}{0.34} \approx 2.94\times
+\]
+
+\begin{table}[h]
+\centering
+\caption{Rendimiento teórico vs. real}
+\begin{tabular}{lccc}
+\toprule
+Métrica & 1 GPU & 3 GPUs (Teórico) & 3 GPUs (Real) \\
+\midrule
+Hashrate (MH/s) & 60 & 180 & 176.4 \\
+Aceleración (\(S\)) & \(1\times\) & \(3\times\) & \(2.94\times\) \\
+Eficiencia (\(E\)) & 100\% & 100\% & 98\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Escenario Realista (\(P_{\text{real}} = 0.95\))}
+\begin{itemize}
+  \item \textbf{Factores reductores:}
+  \begin{itemize}
+    \item Sincronización entre GPUs (\(\downarrow 1.5\%\))
+    \item Overhead de drivers (\(\downarrow 2\%\))
+    \item Límites PCIe (\(\downarrow 1\%\))
+  \end{itemize}
+  \item Paralelización efectiva: \(P_{\text{real}} = 0.95\)
+\end{itemize}
+\[
+S = \dfrac{1}{(1 - 0.95) + \dfrac{0.95}{3}} = \dfrac{1}{0.05 + 0.316} = \dfrac{1}{0.366} \approx 2.73\times
+\]
+
+\vspace{1em}
+\noindent
+\textbf{Impacto en rendimiento:}
+\begin{align*}
+\text{Rendimiento esperado:} \quad & 180\ \text{MH/s} \\
+\text{Rendimiento real:} \quad & 60 \times 2.73 = 163.8\ \text{MH/s} \\
+\text{Pérdida:} \quad & \Delta = \left(1 - \frac{163.8}{180}\right) \times 100\% \approx 9\%
+\end{align*}
+
+\end{document}
